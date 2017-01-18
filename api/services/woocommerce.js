@@ -1,10 +1,12 @@
 var WooCommerceAPI = require('woocommerce-api');
 
 var WooCommerce = new WooCommerceAPI({
-  url: 'http://api.woongular.dev', // Your store URL
-  consumerKey: 'ck_4dd61556fb847e6c9cec33f2ee47753b09c89154', // Your consumer key
-  consumerSecret: 'cs_288260ab3b168cef92cacc5e87d33d3fcc1bd131', // Your consumer secret
+  url: sails.config.woocommerce.url, // Your store URL
+  consumerKey: sails.config.woocommerce.consumerKey, // Your consumer key
+  consumerSecret: sails.config.woocommerce.consumerSecret, // Your consumer secret
   wpAPI: true, // Enable the WP REST API integration
+  wpAPIPrefix: 'wp-json',
+  verifySsl: sails.config.woocommerce.verifySsl,
   version: 'wc/v1' // WooCommerce WP REST API version
 });
 

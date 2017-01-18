@@ -55,12 +55,5 @@ try {
   }
 }
 
-var Woocommerce;
-try {
-  Woocommerce = require('services/woocommerce');
-} catch (e2) {
-  console.error('Woocommerce API did not load.')
-}
-
 // Start server
 sails.lift(rc('sails'));
