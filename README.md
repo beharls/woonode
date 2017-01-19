@@ -4,7 +4,7 @@ An API for wooact/woongular written using [Sails](http://sailsjs.org),
 [woocommerce-api](https://www.npmjs.com/package/woocommerce-api), 
 and [wordpress-rest-api](https://www.npmjs.com/package/wordpress-rest-api).
 
-At the moment I only have READ for products and pages.
+At the moment I only have READ for products and pages. There is also no authentication yet.
 
 ###Setting up WooCommerce
 
