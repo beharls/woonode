@@ -34,7 +34,9 @@ module.exports = {
 
   findOneBySlug: function(req, res, id) {
     WooCommerce.getAsync('products?slug=' + id).then(function(result) {
-      res.send(JSON.parse(result.toJSON().body));
+      var resultJson = JSON.parse(result.toJSON().body);
+      var product = Array.isArray(resultJson) ? resultJson[0]: resultJson;
+      res.send(product);
     }).catch(function(err){
       res.status(404).send('Product Not Found');
     });

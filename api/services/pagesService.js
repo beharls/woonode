@@ -1,25 +1,18 @@
 const _ = require('lodash');
-var pagesService = function(){
-  const removeWooPages = function(data) {
-    const removePages = function(page) {
-      const slugs = ["my-account","checkout","cart","shop"];
-      return (slugs.indexOf(page.slug) > -1);
-    };
-    _.remove(data, removePages);
-    return data;
-  };
+var pagesService = {};
 
-  const getBySlug = function(pages,slug) {
-    return _.find(pages, ['slug', slug]);
-  };
-
-  return {
-    removeWooPages: removeWooPages,
-    getBySlug: getBySlug
-  }
-
-
+pagesService.removeWooPages = function(data) {
+  _.remove(data, pagesService.wooPagesComparator);
+  return data;
 };
 
+pagesService.wooPagesComparator = function(page) {
+  const slugs = ["my-account","checkout","cart","shop"];
+  return (slugs.indexOf(page.slug) > -1);
+};
 
-module.exports = pagesService();
+pagesService.getBySlug = function(pages,slug) {
+  return _.find(pages, ['slug', slug]);
+};
+
+module.exports = pagesService;

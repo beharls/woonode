@@ -1,13 +1,7 @@
-var util = function(){
+var util = {};
 
-  const isNumeric = function(n){
-    return !isNaN(parseFloat(n)) && isFinite(n);
-  }
+util.isNumeric = function(n){
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
 
-  return {
-    isNumeric: isNumeric
-  }
-
-};
-
-module.exports = util();
+module.exports = util;
