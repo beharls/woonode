@@ -4,6 +4,8 @@ An API for wooact/woongular written using [Sails](http://sailsjs.org),
 [woocommerce-api](https://www.npmjs.com/package/woocommerce-api), 
 and [wordpress-rest-api](https://www.npmjs.com/package/wordpress-rest-api).
 
+At the moment I only have READ for products and pages.
+
 ###Setting up WooCommerce
 
 For this installation to work with your installation of WooCommerce, you need to have API functionality enabled for
